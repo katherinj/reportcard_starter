@@ -179,15 +179,14 @@ function addReportCardHeaders(reportCardTableElement) {
 function addCourseRowToReportCard(reportCardTableElement, course, rowNum) {
   // update the code here with information about the course passed to this function
   reportCardTableElement.innerHTML += `
-  <div class="table-row ${rowNum % 2 === 1 ? "even" : "odd"} course-row row-${rowNum + 1}">
-      <h4 class="code-col">${course.code}</h4>
+  <div class="table-row row-${rowNum + 1} ${rowNum % 2 === 1 ? "odd" : "even"} course-row">      <h4 class="code-col">${course.code}</h4>
       <h4 class="name-col">${course.name}</h4>
       <h4 class="sem-col">${course.semester}</h4>
-      <h4 class="cred-col"><span className="credit">${course.credits}</span> credits</h4>
+      <h4 class="cred-col"><span class="credit">${course.credits}</span> credits</h4>
       <h4 class="lett-col gpa">${course.grade}</h4>
       <h4 id="gpa-${rowNum + 1}" class="pts-col">${gpaPointsLookup[course.grade]}</h4>
     
-  </div>
+  </div>  
   `
 }
 
